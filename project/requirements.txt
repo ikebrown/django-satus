@@ -1,0 +1,9 @@
+psycopg2
+Django==1.5
+Django==1.5
+Django==1.5
+Django==1.5
+Django==1.5
+Django==1.5
+Django==1.5
+Django==1.5
