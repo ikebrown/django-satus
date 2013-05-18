@@ -1,4 +1,15 @@
 
-Inspired by reading very good book "Two scoops of django" (Daniel Greenfeld and Audrey Roy) and watching series "Getting started with Django" (http://gettingstartedwithdjango.com/) we created django project template that utilize great tools Vagrant and Puppet  (Puppet, a configuration management tool, and Vagrant, a tool to automate the management and provisioning of development environments) and uses project layout suggested in the book.
+Description
 
+Inspired by reading very good book "Two scoops of django" (Daniel Greenfeld and Audrey Roy) and watching series "Getting started with Django" (http://gettingstartedwithdjango.com/) we created django project template that utilize great tools Vagrant, Puppet and uses project layout suggested in the book.
+
+Puppet, a configuration management tool, and Vagrant, a tool to automate the management and provisioning of development environments.
+
+Setup
+
+1. Install Vagrant (http://www.vagrantup.com/) and VirtualBox (https://www.virtualbox.org/)
+
+2. Modify variable $project_name, $django_version, $postgres_password, $database_name, $password in the file default.pp (puppet_provisioner/manifests/default.pp)
+
+3.
 
