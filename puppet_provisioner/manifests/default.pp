@@ -1,6 +1,12 @@
-$project_name = 'satus'
+$project_name = 'your project name'
 $django_version = '1.5'
-$database_name = 'wiki'
+
+# Password for postgres user 
+$postgres_password = 'projectdb'
+
+$database_name = 'your database name'
+$password = '123'
+
 
 exec { 'apt-get update':
   command => '/usr/bin/apt-get update',
@@ -45,7 +51,7 @@ include stdlib
 include firewall
 include apt
 include concat::setup
-
+  
 class { 'postgresql':
   version => '9.1',
   charset => 'UTF8',
@@ -53,7 +59,10 @@ class { 'postgresql':
 }
 
 class { 'postgresql::server':
-  config_hash => { postgres_password => postgresql_password('postgres', 'projectdb')},
+  config_hash => { 
+    'listen_adresses'   => '*',
+    'postgres_password' => postgresql_password('postgres', "${postgres_password}"),
+    },
 }
 
 class { 'postgresql::client':
@@ -67,7 +76,7 @@ class { 'postgresql::contrib':
 # Creates database and grant all permission to user
 postgresql::db{ "${database_name}":
   user     => 'vagrant',
-  password => postgresql_password('vagrant', "${database_name}"),
+  password => postgresql_password('vagrant', "${password}"),
   require  => [Class['postgresql'], Class['postgresql::server']],
 }
 
