@@ -9,7 +9,13 @@ Setup
 
 1. Install Vagrant (http://www.vagrantup.com/) and VirtualBox (https://www.virtualbox.org/)
 
-2. Modify variable $project_name, $django_version, $postgres_password, $database_name, $password in the file default.pp (puppet_provisioner/manifests/default.pp)
+2. Modify variables $project_name, $django_version, $postgres_password, $database_name, $password in the 
+   file default.pp (puppet_provisioner/manifests/default.pp)
 
-3.
+3. Edit local.py (project/your_project_name/configuration/settings/local.py). Enter database name and       
+   password which you chose in $database_name, $password.
+
+4. Run  vagrant up  from your project directory
+
+5. 
 
