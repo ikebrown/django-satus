@@ -62,7 +62,7 @@ class { 'postgresql':
 
 class { 'postgresql::server':
   config_hash => { 
-    'listen_adresses'   => '*',
+    'listen_addresses'   => '*',
     'postgres_password' => postgresql_password('postgres', "${postgres_password}"),
     },
 }
