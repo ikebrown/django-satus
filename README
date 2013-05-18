@@ -17,5 +17,7 @@ Setup
 
 4. Run  vagrant up  from your project directory
 
-5. 
+5. Run vagrant ssh to enter guest machine
+
+6.  
 
