@@ -1,0 +1,4 @@
+
+Inspired by reading very good book "Two scoops of django" (Daniel Greenfeld and Audrey Roy) and watching series "Getting started with Django" (http://gettingstartedwithdjango.com/) we created django project template that utilize great tools Vagrant and Puppet  (Puppet, a configuration management tool, and Vagrant, a tool to automate the management and provisioning of development environments) and uses project layout suggested in the book.
+
+
