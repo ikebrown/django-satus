@@ -1,4 +1,6 @@
 
+NOT READY YET !!!
+
 Description
 
 Inspired by reading very good book "Two scoops of django" (Daniel Greenfeld and Audrey Roy) and watching series "Getting started with Django" (http://gettingstartedwithdjango.com/) we created django project template that utilize great tools Vagrant, Puppet and uses project layout suggested in the book.
@@ -19,5 +21,11 @@ Setup
 
 5. Run vagrant ssh to enter guest machine
 
-6.  
+6. Run sudo sh /home/vagrant/postinstall.sh 
+
+7. pip install -r requirements.txt
+
+8. python manage.py syncdb
+
+9. python runserver 0.0.0.0:8000 
 
