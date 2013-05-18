@@ -5,6 +5,8 @@ $django_version = '1.5'
 $postgres_password = 'projectdb'
 
 $database_name = 'your database name'
+
+# Set password for your database
 $password = '123'
 
 
