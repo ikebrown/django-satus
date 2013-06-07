@@ -1,13 +1,13 @@
-$project_name = 'your project name'
+$project_name = 'project_name'
 $django_version = '1.5'
 
 # Password for postgres user 
 $postgres_password = 'projectdb'
 
-$database_name = 'your database name'
+$database_name = 'your_database_name'
 
 # Set password for your database
-$password = '123'
+$password = 'password'
 
 
 exec { 'apt-get update':
@@ -21,11 +21,13 @@ exec { 'rename projec_name':
   path    => '/bin',
 }
 
-#Adds what django version to install to requirement file
-exec { 'django version':
-  command => "echo Django==${django_version} >> /vagrant/project/requirements.txt",
-  path    => '/bin',
+class {'requirements_file':
+   django_version => $django_version,
 }
+
+#Installs python imaging library (PIL)
+include pil
+
 
 # Installs Python development tools
 $python_dev_tools = ["python-dev", "python-pip"]
@@ -72,6 +74,10 @@ class { 'postgresql::client':
 } 
 
 class { 'postgresql::contrib':
+  require  => [Class['postgresql'], Class['postgresql::server']],
+} 
+
+class { 'postgresql::devel':
   require  => [Class['postgresql'], Class['postgresql::server']],
 } 
 
